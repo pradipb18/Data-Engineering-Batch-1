@@ -1,0 +1,44 @@
+ 
+
+
+CREATE TABLE employee (
+         employee_id INT PRIMARY KEY,
+         first_name VARCHAR(50),
+         last_name VARCHAR(50),
+         department VARCHAR(50),
+         salary DECIMAL(10, 2)
+     );
+
+
+INSERT INTO employee (employee_id, first_name, last_name, department, salary)
+     VALUES
+         (1, 'Pradip', 'Bochare', 'IT', 60000.00),
+         (2, 'Vedant', 'Joshi', 'HR', 55000.00),
+         (3, 'Vinay', 'Natkar', 'Finance', 70000.00),
+         (4, 'Vikrant', 'Pachbhai', 'Marketing', 62000.00),
+         (5, 'Abhishek', 'Zune', 'IT', 58000.00);
+
+
+   SELECT
+         employee_id,
+         first_name,
+         last_name,
+         department,
+         salary,
+         SUM(salary) OVER (PARTITION BY department) AS department_total_salary,
+         AVG(salary) OVER () AS overall_avg_salary
+     FROM
+         employee;
+
+
+   SELECT
+         department,
+         SUM(salary) AS department_total_salary,
+         AVG(salary) AS department_avg_salary
+     FROM
+         employee
+     GROUP BY
+         department
+     WITH ROLLUP;
+
+

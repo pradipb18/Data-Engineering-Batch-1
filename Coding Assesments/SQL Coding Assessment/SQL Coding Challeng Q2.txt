@@ -1,0 +1,68 @@
+
+
+CREATE TABLE employees (
+         ID INT,
+         Name VARCHAR(50),
+         Salary INT,
+         DepartmentID INT,
+         PRIMARY KEY (ID)
+     );
+
+
+ CREATE TABLE departments (
+         DepartmentID INT,
+         DepartmentName VARCHAR(50),
+         PRIMARY KEY (DepartmentID)
+     );
+
+
+INSERT INTO employees (ID, Name, Salary, DepartmentID) VALUES
+     (1, 'Pradip', 80000, 2),
+     (2, 'Ram', 50000, 3),
+     (3, 'Kaustubh', 55000, 1),
+     (4, 'Sarvesh', 40000, 3),
+     (5, 'Tejas' , 45000, 1),
+     (6, 'Suraj', 70000, 2),
+     (7, 'Yash', 60000, 1);
+
+
+INSERT INTO departments (DepartmentID, DepartmentName) VALUES
+     (1, 'HR'),
+     (2, 'IT'),
+     (3, 'Sales');
+
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     INNER JOIN departments ON employees.DepartmentID = departments.DepartmentID;
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     LEFT JOIN departments ON employees.DepartmentID = departments.DepartmentID;
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     RIGHT JOIN departments ON employees.DepartmentID = departments.DepartmentID;
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     LEFT JOIN departments ON employees.DepartmentID = departments.DepartmentID
+     UNION
+     SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     RIGHT JOIN departments ON employees.DepartmentID = departments.DepartmentID ;
+
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     CROSS JOIN departments;
+
+
+SELECT employees.ID, employees.Name, employees.Salary, departments.DepartmentName
+     FROM employees
+     JOIN departments ON employees.DepartmentID = departments.DepartmentID;
