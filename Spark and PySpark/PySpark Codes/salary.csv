@@ -1,0 +1,21 @@
+name,id,age,department,salary
+user1,1,25,Jr manager,98000
+user2,2,30,sr manager,100000
+user3,6,35,sr manager,100000
+user4,4,32,head,70000
+user5,1,45,Jr manager,60000
+user6,6,47,head2,45000
+user7,5,21,worker,25000
+user8,1,22,Jr manager,50000
+user9,10,54,lead,45000
+user10,59,52,lead2,50000
+user11,6,25,head2,50000
+user12,2,27,sr manager,70000
+user13,59,54,lead2,45000
+user14,2,25,sr manager,70000
+user15,1,32,Jr manager,50000
+user16,3,37,worker,25000
+user17,74,63,Manager,68000
+user18,7,25,head,45000
+user19,10,32,lvl2 head,52000
+user20,10,32,lvl2 head,52000
